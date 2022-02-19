@@ -1,0 +1,120 @@
+@use "../abstracts" as a;
+
+p {
+  color: a.$cl-grayish-blue;
+}
+
+h1,
+h2 {
+  color: a.$cl-very-dark-blue;
+}
+
+.c-header {
+  width: min(100%, 575px);
+  padding: 2px;
+  @media (min-width: a.$media-desktop-min) {
+    padding: 30px;
+  }
+  text-align: center;
+}
+
+.c-main {
+  width: min(100%, 1110px);
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  @media (min-width: a.$media-desktop-max) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "left middletop right"
+      "left middlebottom right";
+  }
+}
+
+.c-headline {
+  margin-bottom: 20px;
+  font-size: 24px;
+  @media (min-width: a.$media-desktop-min) {
+    font-size: 37px;
+    line-height: 46px;
+  }
+}
+
+.c-header__punchline {
+  color: a.$cl-very-dark-blue;
+  font-weight: 200;
+  @media (min-width: a.$media-desktop-min) {
+    font-size: 36px;
+  }
+}
+
+.c-header__text {
+  margin-bottom: 33px;
+  font-size: 1rem;
+  list-style: 1.5em;
+}
+
+.c-box {
+  width: min(100%, 310px);
+  @media (min-width: 1200px) {
+    width: 350px;
+  }
+  padding: 20px 29px 26px 30px;
+  @media (min-width: a.$media-desktop-min) {
+    padding: 27px 29px 26px 30px;
+  }
+  background-color: #fff;
+  border-radius: 5px;
+  border-top: 4px solid;
+  box-shadow: 2px 5px 13px 2px #cfcfdf;
+}
+
+.c-box__headline {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.c-box__text {
+  font-size: 13px;
+  line-height: 23px;
+  margin-bottom: 39px;
+}
+
+.c-box--supervisor {
+  border-color: a.$cl-cyan;
+  @media (min-width: a.$media-desktop-max) {
+    order: 1;
+    grid-area: left;
+    height: max-content;
+    align-self: center;
+  }
+}
+
+.c-box--team-builder {
+  border-color: a.$cl-red;
+  @media (min-width: a.$media-desktop-max) {
+    order: 2;
+    grid-area: middletop;
+  }
+}
+
+.c-box--karma {
+  border-color: a.$cl-orange;
+  @media (min-width: a.$media-desktop-max) {
+    order: 3;
+    grid-area: middlebottom;
+  }
+}
+
+.c-box--calculator {
+  border-color: a.$cl-blue;
+  @media (min-width: a.$media-desktop-max) {
+    order: 4;
+    grid-area: right;
+    height: max-content;
+    align-self: center;
+  }
+}

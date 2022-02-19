@@ -1,0 +1,25 @@
+@use "../abstracts" as a;
+
+$mobile-body-padding: 30px;
+
+.l-body {
+  padding: $mobile-body-padding;
+  @media (min-width: a.$media-desktop-min) {
+    padding: 39px 30px;
+  }
+  min-height: calc(100vh - #{$mobile-body-padding});
+  font-family: a.$font-family-main;
+  font-size: 15px;
+  background-color: a.$cl-very-light-gray;
+}
+
+.l-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.l-link-wrapper {
+  text-align: right;
+}
